@@ -60,3 +60,5 @@ Makefile.in
 *.tgz
 *.zip
 *.rar
+*.bak
+*~
