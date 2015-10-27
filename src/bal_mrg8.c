@@ -30,14 +30,14 @@ _bal_mrg8 (uint64_t * ptr, size_t num)
 
   if (!initialized)
     {
-      x[0] = 97531ULL;
-      x[1] = 4525455822575795487ULL >> 32;	// HP 50g calculated value.
-      x[2] = 4344602724667842419ULL >> 32;	// HP 50g calculated value.
-      x[3] = 6476166431153771575ULL >> 32;	// HP 50g calculated value.
-      x[4] = 586183196364871339ULL >> 32;	// HP 50g calculated value.
-      x[5] = 7505285344278696207ULL >> 32;	// HP 50g calculated value.
-      x[6] = 3044147933607407779ULL >> 32;	// HP 50g calculated value.
-      x[7] = 2916917746092927399ULL >> 32;	// HP 50g calculated value.
+      x[0] = 4525455822575795487ULL >> 32;	// HP 50g calculated value.
+      x[1] = 4344602724667842419ULL >> 32;	// HP 50g calculated value.
+      x[2] = 6476166431153771575ULL >> 32;	// HP 50g calculated value.
+      x[3] = 586183196364871339ULL >> 32;	// HP 50g calculated value.
+      x[4] = 7505285344278696207ULL >> 32;	// HP 50g calculated value.
+      x[5] = 3044147933607407779ULL >> 32;	// HP 50g calculated value.
+      x[6] = 2916917746092927399ULL >> 32;	// HP 50g calculated value.
+      x[7] = 7055578059720878939ULL >> 32;      // HP 50g calculated value.
       initialized = 1;
     }
 
@@ -56,11 +56,11 @@ _bal_mrg8 (uint64_t * ptr, size_t num)
 	{
 	  for (j = 0; j < 4; j++)
 	    {
-	      s1 += a[j] * x[i - 1 - j];
+	      s1 += a[j] * ptr[i - 1 - j];
 	    }
 	  for (j = 4; j < 8; j++)
 	    {
-	      s2 += a[j] * x[i - 1 - j];
+	      s2 += a[j] * ptr[i - 1 - j];
 	    }
 	  s = (s1 & mask) + (s1 >> 31) + (s2 & mask) + (s2 >> 31);
 	  ptr[i] = (s & mask) + (s >> 31);
