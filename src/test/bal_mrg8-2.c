@@ -5,7 +5,7 @@
 int
 main (int argc, char *argv[])
 {
-  uint64_t mcg[8];
+  uint64_t mcg[9];
   const uint64_t a[] = { 1089656042, 1906537547, 1764115693, 1304127872,
     189748160, 1984088114, 626062218, 1927846343
   };
@@ -16,39 +16,41 @@ main (int argc, char *argv[])
 
   mcg[0] = 97531ULL;
 
-  for (i = 1; i < 8; i++)
+  for (i = 1; i < 9; i++)
     {
       mcg[i] = m * mcg[i - 1];
     }
 
-  for (i = 1; i < 8; i++)
+  for (i = 1; i < 9; i++)
     {
       mcg[i] = mcg[i] >> 32;
     }
 
-  if (mcg[1] != 4525455822575795487LL >> 32) // HP 50g calculated value.
+  if (mcg[1] != 4525455822575795487ULL >> 32) // HP 50g calculated value.
     abort ();			
-  if (mcg[2] != 4344602724667842419LL >> 32) // HP 50g calculated value.
+  if (mcg[2] != 4344602724667842419ULL >> 32) // HP 50g calculated value.
     abort ();			
-  if (mcg[3] != 6476166431153771575LL >> 32) // HP 50g calculated value.
+  if (mcg[3] != 6476166431153771575ULL >> 32) // HP 50g calculated value.
     abort ();			
-  if (mcg[4] != 586183196364871339LL >> 32) // HP 50g calculated value.
+  if (mcg[4] != 586183196364871339ULL >> 32) // HP 50g calculated value.
     abort ();			
-  if (mcg[5] != 7505285344278696207LL >> 32) // HP 50g calculated value.
+  if (mcg[5] != 7505285344278696207ULL >> 32) // HP 50g calculated value.
     abort ();			
-  if (mcg[6] != 3044147933607407779LL >> 32) // HP 50g calculated value.
+  if (mcg[6] != 3044147933607407779ULL >> 32) // HP 50g calculated value.
     abort ();			
-  if (mcg[7] != 2916917746092927399LL >> 32) // HP 50g calculated value.
-    abort ();			
+  if (mcg[7] != 2916917746092927399ULL >> 32) // HP 50g calculated value.
+    abort (); 
+  if (mcg[8] != 7055578059720878939ULL >> 32) // HP 50g calculated value.
+    abort();
 
   for (i = 0; i < 4; i++)
     {
-      s1 += a[i] * mcg[i];
+      s1 += a[i] * mcg[i+1];
     }
 
   for (i = 4; i < 8; i++)
     {
-      s2 += a[i] * mcg[i];
+      s2 += a[i] * mcg[i+1];
     }
   s = (s1 & mask) + (s1 >> 31) + (s2 & mask) + (s2 >> 31);
   s = (s & mask) + (s >> 31);
