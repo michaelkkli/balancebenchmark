@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include <string.h>
 
-void _bal_mrg8 (uint64_t *ptr, size_t num);
+void _bal_mrg8 (uint64_t * ptr, size_t num);
+void _bal_pja_invnorm( double * p, size_t num);
 
 #endif /* BALANCE_INTERNAL_H */
