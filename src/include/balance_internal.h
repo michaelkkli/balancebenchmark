@@ -50,14 +50,15 @@ void _bal_andersen_qe_param_destroy (_bal_andersen_qe_param);
 _bal_andersen_qe_random_variates
 _bal_andersen_qe_random_variates_init (_bal_andersen_qe_param);
 
-void _bal_andersen_qe_random_variates_destroy (_bal_andersen_qe_random_variates);
+void
+_bal_andersen_qe_random_variates_destroy (_bal_andersen_qe_random_variates);
 
-void _bal_andersen_qe_minstore (double *St, _bal_andersen_qe_random_variates,
+void _bal_andersen_qe_minstore (double *S, _bal_andersen_qe_random_variates,
 				_bal_andersen_qe_param);
 
-void _bal_mrg8 (uint64_t * ptr, size_t num);
-void _bal_mrg8_normalize (double * ptr, uint64_t *i, size_t num);
+void _bal_mrg8 (uint64_t * out, size_t num);
+void _bal_mrg8_normalize (double *out, uint64_t * in, size_t num);
 
-void _bal_pja_invnorm (double *p, size_t num);
+void _bal_pja_invnorm (double *inout, size_t num);
 
 #endif /* BALANCE_INTERNAL_H */

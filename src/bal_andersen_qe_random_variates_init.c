@@ -30,6 +30,8 @@ _bal_andersen_qe_random_variates_init (_bal_andersen_qe_param param)
 
   _bal_mrg8 (buf, 3*m);
   _bal_mrg8_normalize (rv->rand, buf, 3*m);
+  _bal_pja_invnorm (rv->rand, m);
+  _bal_pja_invnorm (&rv->rand[2*m], m);
 
   free(buf);
   

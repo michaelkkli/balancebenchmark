@@ -28,5 +28,5 @@ src_test_bal_mrg8_3_test_CPPFLAGS = -I"$(srcdir)/src/include"
 src_test_bal_pja_invnorm_1_test_SOURCES = src/test/bal_pja_invnorm-1.c src/bal_pja_invnorm.c src/bal_mrg8.c
 src_test_bal_pja_invnorm_1_test_CPPFLAGS = -I"$(srcdir)/src/include"
 
-src_test_bal_andersen_qe_minstore_1_test_SOURCES = src/test/bal_andersen_qe_minstore-1.c src/bal_andersen_qe_random_variates_init.c src/bal_andersen_qe_param_init.c src/bal_mrg8.c
+src_test_bal_andersen_qe_minstore_1_test_SOURCES = src/test/bal_andersen_qe_minstore-1.c src/bal_andersen_qe_random_variates_init.c src/bal_andersen_qe_param_init.c src/bal_mrg8.c src/bal_andersen_qe_minstore.c src/bal_pja_invnorm.c
 src_test_bal_andersen_qe_minstore_1_test_CPPFLAGS = -I"$(srcdir)/src/include"
