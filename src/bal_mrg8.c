@@ -160,3 +160,14 @@ _bal_mrg8 (uint64_t * ptr, size_t num)
 	}
     }
 }
+
+void
+_bal_mrg8_normalize (double * out, uint64_t *in, size_t num)
+{
+  size_t i;
+  
+  for (i=0; i<num; i++)
+    {
+      out[i] = (double)in[i]/(uint64_t)0x7FFFFFFF;
+    }
+}
