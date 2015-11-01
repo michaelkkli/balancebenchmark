@@ -8,7 +8,7 @@ main (int argc, char *argv[])
   double *S;
   const double S0 = 100., K = S0;
   const size_t num_steps = 16;
-  const double delta_t = .5/num_steps;
+  const double delta_t = .5 / num_steps;
   const size_t path_block_size = 1;
   const size_t num_path_blocks = 1000000;
   const size_t m = num_steps * path_block_size * num_path_blocks;
@@ -25,8 +25,7 @@ main (int argc, char *argv[])
 				       S0,
 				       delta_t,
 				       num_steps,
-				       path_block_size,
-				       num_path_blocks);
+				       path_block_size, num_path_blocks);
 
   if (!param)
     abort ();
