@@ -62,7 +62,7 @@ _bal_andersen_qe_minstore (double *S, _bal_andersen_qe_random_variates rv,
 
 	  for (t = 0; t < param->num_steps; t++)
 	    {
-	      if (t > 0)
+	      if (tprev->V != param->theta)
 		{
 		  m = param->theta + (tprev->V - param->theta) * expmkd;
 		}
@@ -76,8 +76,9 @@ _bal_andersen_qe_minstore (double *S, _bal_andersen_qe_random_variates rv,
 
 	      if (phi < phi_c)
 		{
-		  two_phi_m1 = 2 * m * m / s2;
-		  b2 = two_phi_m1 + sqrt (two_phi_m1) * sqrt (two_phi_m1 - 1);
+		  two_phi_m1 = 2. * m * m / s2;
+		  b2 =
+		    two_phi_m1 + sqrt (two_phi_m1) * sqrt (two_phi_m1 - 1.);
 		  a = m / b2;	/* b2 because 1. not subtracted yet. */
 		  b2 -= 1.;
 
