@@ -7,7 +7,7 @@ main (int argc, char *argv[])
   _bal_andersen_qe_random_variates rv;
   double *S;
   const double S0 = 100., K = S0;
-  const size_t num_steps = 16;
+  const size_t num_steps = 64;
   const double delta_t = .5/num_steps;
   const size_t path_block_size = 1;
   const size_t num_path_blocks = 1000000;
@@ -16,10 +16,10 @@ main (int argc, char *argv[])
   long double call_price;
   size_t i;
 
-  /* Heston 1993. At-the-money call price is $2.83. */
+  /* Heston 1993. At-the-money call price is $2.81. */
   param = _bal_andersen_qe_param_init (.1,
 				       2.,
-				       -.5,
+				       .5,
 				       .01,
 				       .01,
 				       S0,
@@ -51,7 +51,7 @@ main (int argc, char *argv[])
     }
   call_price /= num_paths;
 
-  if (fabs (call_price - 2.83) > 0.01)
+  if (fabs (call_price - 2.81) > 0.01)
     abort ();
 
   free (S);

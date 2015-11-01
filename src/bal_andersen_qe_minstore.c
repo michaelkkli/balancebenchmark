@@ -31,7 +31,7 @@ void _bal_andersen_qe_minstore (double *S, _bal_andersen_qe_random_variates rv,
   s2B = (param->theta*param->epsilon*param->epsilon/2./param->kappa)
     *one_m_expmkd*one_m_expmkd;
 
-  K0 = -param->rho * param->kappa * param->theta * param->delta_t / param->epsilon;
+  K0 = -(param->rho * param->kappa * param->theta / param->epsilon ) * param->delta_t;
   K1 = param->delta_t * ( param->kappa * param->rho / param->epsilon - .5 );
   K2 = K1;
   K1 *= gamma1;
