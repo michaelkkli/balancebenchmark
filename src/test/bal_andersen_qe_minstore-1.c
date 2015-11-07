@@ -7,7 +7,7 @@ main (int argc, char *argv[])
   _bal_andersen_qe_random_variates rv;
   double *S;
   const double S0 = 100., K = S0;
-  const size_t num_steps = 16;
+  const size_t num_steps = 32;
   const double delta_t = .5 / num_steps;
   const size_t path_block_size = 1;
   const size_t num_path_blocks = 1000000;

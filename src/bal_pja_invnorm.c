@@ -42,7 +42,7 @@ _bal_pja_invnorm (double *p, size_t num)
 
   for (i = 0; i < num; i++)
     {
-      if (p_low < p[i] & p[i] < p_high)
+      if (p_low <= p[i] & p[i] <= p_high)
 	{
 	  q = p[i] - .5;
 	  r = q * q;
