@@ -52,19 +52,33 @@ _bal_pja_invnorm (double *p, size_t num)
 					    b[2]) * r + b[3]) * r +
 					  b[4]) * r + 1.);
 	}
-      else if (p[i] < p_low)
+      else if (0. < p[i] & p[i] < p_low)
 	{
 	  q = sqrt (-2. * log (p[i]));
 	  p[i] =
 	    (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q +
 	     c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1.);
+
+	  if (isnan (p[i]))
+	    {
+	      p[i] = -38.44939;
+	    }
 	}
-      else
+      else if (p_high < p[i] & p[i] < 1.)
 	{
 	  q = sqrt (-2. * log (1. - p[i]));
 	  p[i] =
 	    -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q +
 	      c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1.);
+
+	  if (isnan (p[i]))
+	    {
+	      p[i] = 8.20954;
+	    }
+	}
+      else
+	{
+	  p[i] = 0.;
 	}
     }
 }
