@@ -16,9 +16,9 @@ _bal_adaptive_lobatto_resize (_bal_adaptive_lobatto in, size_t levels)
       if (in->data)
 	{
 	  tmp = in->data;
+	  old_n = in->len;
 	}
 
-      old_n = in->len;
       in->len = n;
       in->data = (double *) malloc ((sizeof (double)) * n);
 

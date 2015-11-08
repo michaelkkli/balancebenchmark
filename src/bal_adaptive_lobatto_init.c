@@ -8,6 +8,9 @@ _bal_adaptive_lobatto_init (size_t levels)
   if (!tmp)
     return 0;
 
+  tmp->data = 0;
+  tmp->len = 0;
+
   _bal_adaptive_lobatto_resize (tmp, levels);
   if (!tmp->data)
     {
