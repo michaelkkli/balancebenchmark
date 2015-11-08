@@ -66,7 +66,7 @@ _bal_adaptive_lobatto _bal_adaptive_lobatto_init (size_t levels);
 
 void _bal_adaptive_lobatto_destroy (_bal_adaptive_lobatto);
 
-void _bal_adaptive_lobatto_reize (_bal_adaptive_lobatto, size_t levels);
+void _bal_adaptive_lobatto_resize (_bal_adaptive_lobatto, size_t levels);
 
 double
 _bal_adaptive_lobatto_integrate (void (*f) (double *, size_t),
