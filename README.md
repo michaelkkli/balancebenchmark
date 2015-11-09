@@ -1,6 +1,18 @@
 # BalanceBenchmark
 A Monte Carlo simulation benchmark based on the Heston stochastic volatility model.
 
+## Developer Notes
+
+First time use:
+```bash
+balancebenchmark$ autoreconf --install && mkdir build && cd build
+```
+
+Subsequent builds:
+```bash
+build$ (cd .. && autoreconf) && ../configure CFLAGS="-g" && make check
+```
+
 ## References
 - **Peter J. Acklam**. http://home.online.no/~pjacklam/notes/invnorm/
 - **Leif B. G. Andersen**. Efficient Simulation of the Heston Stochastic Volatility Model. _Social Science Research Network_, **2007**. http://dx.doi.org/10.2139/ssrn.946405
