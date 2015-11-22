@@ -1,5 +1,7 @@
 TESTS = src/test/success.test \
 	src/test/popcountll.test \
+	src/test/bal_heston_characteristic_lord2006-4.test \
+	src/test/bal_heston_characteristic_lord2006-3.test \
 	src/test/bal_heston_characteristic_lord2006-2.test \
 	src/test/bal_heston_characteristic_lord2006-1.test \
 	src/test/bal_mrg8-1.test \
@@ -50,3 +52,9 @@ src_test_bal_heston_characteristic_lord2006_1_test_CPPFLAGS = -I"$(srcdir)/src/i
 
 src_test_bal_heston_characteristic_lord2006_2_test_SOURCES = src/test/bal_heston_characteristic_lord2006-2.c src/bal_heston_characteristic_lord2006.c src/bal_adaptive_lobatto_init.c src/bal_adaptive_lobatto_integrate.c src/bal_adaptive_lobatto_resize.c
 src_test_bal_heston_characteristic_lord2006_2_test_CPPFLAGS = -I"$(srcdir)/src/include"
+
+src_test_bal_heston_characteristic_lord2006_3_test_SOURCES = src/test/bal_heston_characteristic_lord2006-3.c src/bal_heston_characteristic_lord2006.c src/bal_adaptive_lobatto_init.c src/bal_adaptive_lobatto_integrate.c src/bal_adaptive_lobatto_resize.c
+src_test_bal_heston_characteristic_lord2006_3_test_CPPFLAGS = -I"$(srcdir)/src/include"
+
+src_test_bal_heston_characteristic_lord2006_4_test_SOURCES = src/test/bal_heston_characteristic_lord2006-4.c src/bal_heston_characteristic_lord2006.c src/bal_adaptive_lobatto_init.c src/bal_adaptive_lobatto_integrate.c src/bal_adaptive_lobatto_resize.c
+src_test_bal_heston_characteristic_lord2006_4_test_CPPFLAGS = -I"$(srcdir)/src/include"
