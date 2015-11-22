@@ -127,8 +127,7 @@ main (int argc, char *argv[])
     abort ();
 
   tmp = _bal_adaptive_lobatto_integrate (f, a, b, adaptlob, 1e-16);
-  tmp *= exp (-alpha * k) / M_PI;
-  tmp /= Cinf;
+  tmp *= exp (-alpha * k) / M_PI / Cinf;
 
   if (!isfinite (tmp) | fabs (tmp - F_AB) > .04 * F_AB)
     abort ();
