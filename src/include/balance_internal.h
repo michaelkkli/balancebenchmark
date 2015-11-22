@@ -6,6 +6,7 @@
  */
 #pragma once
 
+#include <complex.h>
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -61,6 +62,12 @@ _bal_andersen_qe_random_variates_destroy (_bal_andersen_qe_random_variates);
 
 void _bal_andersen_qe_minstore (double *S, _bal_andersen_qe_random_variates,
 				_bal_andersen_qe_param);
+
+void
+_bal_heston_characteristic_lord2006 (double complex * u_inout, int num,
+				     double kappa, double omega, double rho,
+				     double tau, double theta, double f,
+				     double V0);
 
 _bal_adaptive_lobatto _bal_adaptive_lobatto_init (size_t levels);
 
